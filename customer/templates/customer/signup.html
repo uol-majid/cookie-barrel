@@ -19,7 +19,9 @@ Cookie Barrel{% endblock %} {% block content %}
 <div class="mt-150 mb-150">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0 text-center">
+      <div
+        class="col-lg-8 mb-5 mb-lg-0 text-center p-4 shadow-sm border rounded"
+      >
         <div class="form-title">
           <h2>Create an Account</h2>
           <p>Start your cookie journey with us!</p>
@@ -33,7 +35,12 @@ Cookie Barrel{% endblock %} {% block content %}
           >
             {% csrf_token %}
             <p>
-              <input type="text" name="username" placeholder="Username" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                id="name"
+              />
             </p>
             <p>
               <input
@@ -44,16 +51,29 @@ Cookie Barrel{% endblock %} {% block content %}
               />
             </p>
             <p>
-              <input type="password" name="password1" placeholder="Password" />
+              <input
+                type="password"
+                name="password1"
+                placeholder="Password"
+                id="password"
+              />
             </p>
             <p>
               <input
                 type="password"
                 name="password2"
                 placeholder="Confirm Password"
+                id="confirm_password"
               />
             </p>
-            <p><input type="submit" value="Sign Up" style="width: 30%" /></p>
+            <p>
+              <input
+                type="submit"
+                class="custom-btn"
+                value="Sign Up"
+                style="width: 30%"
+              />
+            </p>
             <p class="text-center mt-3">
               Already have an account?
               <a href="{% url 'login' %}">Login here</a>

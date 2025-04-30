@@ -2769,3 +2769,15 @@ table.order-details tbody td {
   vertical-align: middle;
   width: 100%;
 }
+
+.custom-btn {
+  font-family: "Poppins", sans-serif !important;
+  display: inline-block !important;
+  background-color: #f28123 !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+}
+.custom-btn:hover {
+  background-color: #051922 !important;
+  color: #f28123 !important;
+}

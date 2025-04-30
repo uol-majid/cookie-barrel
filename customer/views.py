@@ -41,3 +41,21 @@ def my_orders_view(request):
 
 def order_details_view(request):
     return render(request, 'customer/order_details.html')
+
+def reset_password_view(request):
+    return render(request, 'customer/reset_password.html')
+
+def terms_conditions_view(request):
+    return render(request, 'customer/terms_conditions.html')
+
+def privacy_policy_view(request):
+    return render(request, 'customer/privacy_policy.html')
+
+def profile_view(request):
+    return render(request, 'customer/profile.html')
+
+def edit_profile_view(request):
+    return render(request, 'customer/edit_profile.html')
+
+def change_password_view(request):
+    return render(request, 'customer/change_password.html')

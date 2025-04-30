@@ -36,11 +36,11 @@ function notice(f) {
 }
 
 function valid_login(f) {
-  if (f.username.value == "") {
+  if (f.email.value == "") {
     jQuery("#login_signup_form_status").html(
-      '<span class="wrong">Username or Email must not be empty!</span>'
+      '<span class="wrong">Email must not be empty!</span>'
     );
-    notice(f.username);
+    notice(f.email);
   } else if (f.password.value == "") {
     jQuery("#login_signup_form_status").html(
       '<span class="wrong">Password must not be empty!</span>'
@@ -55,11 +55,11 @@ function valid_login(f) {
 }
 
 function valid_signup(f) {
-  if (f.username.value == "") {
+  if (f.name.value == "") {
     jQuery("#login_signup_form_status").html(
-      '<span class="wrong">Username must not be empty!</span>'
+      '<span class="wrong">Name must not be empty!</span>'
     );
-    notice(f.username);
+    notice(f.name);
   } else if (f.email.value == "") {
     jQuery("#login_signup_form_status").html(
       '<span class="wrong">Email must not be empty and must be valid!</span>'
@@ -98,4 +98,83 @@ function valid_forgot_password(f) {
   } else {
     return true;
   }
+}
+
+function valid_reset_password(f) {
+  if (f.otp.value == "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Please enter otp!</span>'
+    );
+    notice(f.otp);
+  } else if (f.new_password1.value == "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">New password must not be empty!</span>'
+    );
+    notice(f.new_password1);
+  } else if (f.new_password2.value == "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Please confirm your new password!</span>'
+    );
+    notice(f.new_password2);
+  } else if (f.new_password1.value != f.new_password2.value) {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Passwords do not match!</span>'
+    );
+    notice(f.new_password2);
+  } else {
+    return true; // Form is valid
+  }
+
+  return false; // Prevent form submission
+}
+
+function valid_edit_form(f) {
+  if (f.name.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Full name must not be empty!</span>'
+    );
+    notice(f.name);
+  } else if (f.phone.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Phone number must not be empty!</span>'
+    );
+    notice(f.phone);
+  } else if (f.address.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Address must not be empty!</span>'
+    );
+    notice(f.address);
+  } else {
+    return true; // valid, allow form to submit
+  }
+
+  return false; // prevent form submission if any check fails
+}
+
+function valid_change_password(f) {
+  if (f.old_password.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Current password must not be empty!</span>'
+    );
+    notice(f.old_password);
+  } else if (f.new_password1.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">New password must not be empty!</span>'
+    );
+    notice(f.new_password1);
+  } else if (f.new_password2.value.trim() === "") {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Confirm new password must not be empty!</span>'
+    );
+    notice(f.new_password2);
+  } else if (f.new_password1.value !== f.new_password2.value) {
+    jQuery("#login_signup_form_status").html(
+      '<span class="wrong">Passwords do not match!</span>'
+    );
+    notice(f.new_password2);
+  } else {
+    return true; // valid, allow form to submit
+  }
+
+  return false; // prevent form submission if any check fails
 }

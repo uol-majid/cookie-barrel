@@ -19,7 +19,7 @@ Cookie Barrel{% endblock %} {% block content %}
 <div class="contact-from-section mt-150 mb-150">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
+      <div class="col-lg-8 mb-5 mb-lg-0 p-4 shadow-sm border rounded">
         <div class="form-title">
           <h2>Have a Question?</h2>
           <p>Feel free to ask about products, orders, or anything else.</p>
@@ -70,8 +70,14 @@ Cookie Barrel{% endblock %} {% block content %}
                 placeholder="Your Message"
               ></textarea>
             </p>
-            <input type="hidden" name="token" value="FsWga4&@f6aw" />
-            <p><input type="submit" value="Submit" /></p>
+            <p>
+              <input
+                type="submit"
+                class="custom-btn"
+                style="width: 20%"
+                value="Submit"
+              />
+            </p>
           </form>
         </div>
       </div>
